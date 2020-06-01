@@ -17,12 +17,10 @@ class Customer
   end
 
   def meals
-    Meal.all.filter { |meal| meal.customer == self}
+    Meal.all.filter { |meal| meal.customer == self }
   end
 
   def waiters
-    meals.map do |meal|
-      meal.waiter
-    end
+    meals.map { |meal| meal.waiter }
   end
 end
