@@ -17,9 +17,7 @@ class Waiter
   end
 
   def meals
-    Meal.all.filter do |meal|
-      meal.waiter == self
-    end
+    Meal.all.filter { |meal| meal.waiter == self }
   end
 
   def customers
