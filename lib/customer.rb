@@ -18,7 +18,7 @@ class Customer
 
   def meals
     Meal.all.filter do |meal|
-      meal.customer == se;f
+      meal.customer == self
     end
   end
 end
