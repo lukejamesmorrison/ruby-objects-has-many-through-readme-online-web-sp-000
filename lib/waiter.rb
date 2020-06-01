@@ -15,4 +15,16 @@ class Waiter
   def new_meal(customer, total, tip = 0)
     Meal.new(self, customer, total, tip)
   end
+
+  def meals
+    Meal.all.filter do |meal|
+      meal.waiter == self
+    end
+  end
+
+  def customers
+    meals.map do |meal|
+      meal.customer
+    end
+  end
 end
